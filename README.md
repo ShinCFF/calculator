@@ -1,3 +1,3 @@
 # calculator
 
-A new Flutter project.
+A new sample Flutter project.
