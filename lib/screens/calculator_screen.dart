@@ -133,7 +133,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
     setState(() {
       number_1 = res.toStringAsPrecision(3);
-      if (number_1.endsWith(".0")) {
+      if (number_1.contains(".")) {
         while (number_1.endsWith("0")) {
           number_1 = number_1.substring(0, number_1.length - 1);
         }
@@ -157,7 +157,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         value = "0.";
       }
       if ((value == ButtonValues.n0 || value == ButtonValues.n00) &&
-          number_1.isEmpty) {
+          number_1 == "0") {
+      } else if (value == ButtonValues.n00 && number_1.isEmpty) {
+        number_1 += "0";
       } else {
         number_1 += value;
       }
@@ -169,7 +171,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         value = "0.";
       }
       if ((value == ButtonValues.n0 || value == ButtonValues.n00) &&
-          number_2.isEmpty) {
+          number_2 == "0") {
+      } else if (value == ButtonValues.n00 && number_2.isEmpty) {
+        number_2 += "0";
       } else {
         number_2 += value;
       }
