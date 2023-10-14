@@ -10,6 +10,7 @@ class ButtonValues {
   static const String dot = ".";
 
   static const String n0 = "0";
+  static const String n00 = "00";
   static const String n1 = "1";
   static const String n2 = "2";
   static const String n3 = "3";
@@ -38,6 +39,7 @@ class ButtonValues {
     n3,
     add,
     n0,
+    n00,
     dot,
     calculate,
   ];

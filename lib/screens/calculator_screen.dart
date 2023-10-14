@@ -19,11 +19,12 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           children: [
             Expanded(
               child: SingleChildScrollView(
+                reverse: true,
                 child: Container(
                   alignment: Alignment.bottomRight,
                   padding: const EdgeInsets.all(16),
                   child: const Text(
-                    "00000000100000",
+                    "0",
                     style: TextStyle(
                       fontSize: 60,
                       fontWeight: FontWeight.bold,
@@ -51,6 +52,48 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   Widget buildButton(value) {
-    return Text(value);
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Material(
+        color: setColorButton(value),
+        clipBehavior: Clip.hardEdge,
+        shape: const OutlineInputBorder(
+          borderRadius: BorderRadius.horizontal(
+            left: Radius.circular(30),
+            right: Radius.circular(30),
+          ),
+          borderSide: BorderSide(
+            color: Colors.white54,
+          ),
+        ),
+        child: InkWell(
+          onTap: () {},
+          child: Center(
+            child: Text(
+              value,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Color setColorButton(value) {
+    return [ButtonValues.del, ButtonValues.clr].contains(value)
+        ? Colors.blueGrey
+        : [
+            ButtonValues.per,
+            ButtonValues.multiply,
+            ButtonValues.add,
+            ButtonValues.subtract,
+            ButtonValues.divide,
+            ButtonValues.calculate,
+          ].contains(value)
+            ? Colors.orange
+            : Colors.black;
   }
 }
