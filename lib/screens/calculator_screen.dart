@@ -1,4 +1,5 @@
-import 'package:calculator/screens/buttons.dart';
+import 'package:calculator/screens/top_title.dart';
+import 'package:calculator/system/buttons.dart';
 import 'package:flutter/material.dart';
 
 class CalculatorScreen extends StatefulWidget {
@@ -17,6 +18,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     final screeenSize = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: const TopTitle(title: 'Calculator'),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -26,14 +28,14 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 reverse: true,
                 child: Container(
                   alignment: Alignment.bottomRight,
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(32),
                   child: Text(
                     "$number_1$operand$number_2".isEmpty
                         ? "0"
                         : "$number_1$operand$number_2",
                     style: const TextStyle(
                       fontSize: 60,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.end,
                   ),
@@ -65,12 +67,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         clipBehavior: Clip.hardEdge,
         shape: const OutlineInputBorder(
           borderRadius: BorderRadius.horizontal(
-            left: Radius.circular(30),
-            right: Radius.circular(30),
+            left: Radius.circular(40),
+            right: Radius.circular(40),
           ),
-          borderSide: BorderSide(
-              // color: Colors.white,
-              ),
+          borderSide: BorderSide(),
         ),
         child: InkWell(
           onTap: () => onTap(value),
@@ -134,7 +134,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     setState(() {
       number_1 = res.toStringAsPrecision(3);
       if (number_1.endsWith(".0")) {
-        number_1 = number_1.substring(0, number_1.length - 2);
+        while (number_1.endsWith("0")) {
+          number_1 = number_1.substring(0, number_1.length - 1);
+        }
+        number_1 = number_1.substring(0, number_1.length - 1);
       }
       operand = number_2 = "";
     });
