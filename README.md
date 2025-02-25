@@ -1,34 +1,29 @@
-Here’s a README for your Flutter calculator project:
-
----
-
 # Calculator
 
 ## Overview
 
-This is a simple and user-friendly calculator app built with Flutter. It supports basic arithmetic operations and features a clean and intuitive user interface.
+A simple and responsive calculator app built with Flutter, supporting basic arithmetic operations with a clean user interface.
 
 ## Features
 
-- **Basic Operations**: Addition, subtraction, multiplication, and division.
-- **Responsive UI**: Works on both Android and iOS devices.
-- **Error Handling**: Prevents invalid calculations and division by zero.
-- **Lightweight & Fast**: Optimized for smooth performance.
+- **Basic Arithmetic**: Addition, subtraction, multiplication, and division.
+- **Interactive UI**: Well-structured layout for smooth user experience.
+- **Modular Architecture**: Organized code for scalability and maintenance.
+- **Cross-Platform Support**: Works on both Android and iOS.
 
-## Dependencies
+## Folder Structure
 
-Ensure you have the following installed:
-
-- **Flutter SDK** (latest stable version)
-- **Dart** (included with Flutter)
-- Any additional dependencies can be found in `pubspec.yaml`
+- `config/` – Stores application configurations (e.g., themes, settings).
+- `screens/` – Contains UI screens and widgets.
+- `system/` – Implements core logic such as calculations.
+- `main.dart` – Entry point of the application.
 
 ## Installation
 
 1. Clone the repository:
 
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/ShinCFF/calculator.git
    cd calculator
    ```
 
@@ -43,17 +38,13 @@ Ensure you have the following installed:
    flutter run
    ```
 
-## Folder Structure
-
-- `lib/` - Contains the main source code.
-  - `main.dart` - Entry point of the application.
-  - `calculator.dart` - Business logic for calculations.
-  - `ui/` - UI components and widgets.
-- `assets/` - Contains images or other resources.
-
 ## Usage
 
 1. Launch the app on your emulator or physical device.
-2. Use the on-screen keypad to input numbers and operations.
-3. Press `=` to compute results.
-4. Use `C` to clear the input field.
+2. Enter numbers and select operations.
+3. Press `=` to compute the result.
+4. Use `C` to clear the input.
+
+## Contributions
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
